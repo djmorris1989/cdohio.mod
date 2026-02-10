@@ -152,12 +152,12 @@ EconImpactCalc <- function(year = 2022,
   tax_vec <- tax_products + tax_production
 
   ### calculate change in employment
-  fte_vec <- output_vec * cdohio.mod::fte_coefficients
+  fte_vec <- output_vec * (cdohio.mod::fte_coefficients / 1000000)
 
   ## calculate change in wages
-  earn_vec         <- (gross_earnings * fte_vec) / 1000000
-  net_earn_vec     <- (net_earnings * fte_vec) / 1000000
-  inc_tax_nics_vec <- (inc_tax_nics * fte_vec) / 1000000
+  earn_vec         <- (gross_earnings * fte_vec)
+  net_earn_vec     <- (net_earnings * fte_vec)
+  inc_tax_nics_vec <- (inc_tax_nics * fte_vec)
 
   ## adjust for inflation
   output_vec <- output_vec * infl_adjust
@@ -196,12 +196,12 @@ EconImpactCalc <- function(year = 2022,
   tax_vec <- tax_products + tax_production
 
   ### calculate change in employment
-  fte_vec <- output_vec * cdohio.mod::fte_coefficients
+  fte_vec <- output_vec * (cdohio.mod::fte_coefficients / 1000000)
 
   ## calculate change in wages
-  earn_vec         <- (gross_earnings * fte_vec) / 1000000
-  net_earn_vec     <- (net_earnings * fte_vec) / 1000000
-  inc_tax_nics_vec <- (inc_tax_nics * fte_vec) / 1000000
+  earn_vec         <- (gross_earnings * fte_vec)
+  net_earn_vec     <- (net_earnings * fte_vec)
+  inc_tax_nics_vec <- (inc_tax_nics * fte_vec)
 
   ## adjust for inflation
   output_vec <- output_vec * infl_adjust
